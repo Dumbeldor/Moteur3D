@@ -1,5 +1,6 @@
 #include "Scene.h"
 
+
 Scene::Scene()
 {
 	window.create(sf::VideoMode(this->LARGEUR_ECRAN, this->HAUTEUR_ECRAN, 32), "Test OpenGL", sf::Style::Default, sf::ContextSettings(32));
