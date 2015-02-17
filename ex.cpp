@@ -1,4 +1,4 @@
-#include <SFML/Graphics.hpp>
+/*#include <SFML/Graphics.hpp>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <iostream>
@@ -184,7 +184,8 @@ void Dessiner()
 
 		glEnd();
 		*/
-
+/*
 	glFlush();
 	window.display();
 }
+*/

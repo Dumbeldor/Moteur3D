@@ -1,4 +1,4 @@
-#include "Scene.h"
+#include "../include/Scene.h"
 
 
 Scene::Scene()
@@ -42,7 +42,7 @@ void Scene::gererEvenements()
 		{
 			// fenêtre fermée
 			case sf::Event::Closed:
-				this->continuer = false;	
+				this->continuer = false;
 				break;
 
 			case sf::Event::KeyPressed:
@@ -58,7 +58,7 @@ void Scene::gererEvenements()
 void Scene::afficher()
 {
 	glFlush();
-	window.display();	
+	window.display();
 }
 
 void Scene::animer()
@@ -127,12 +127,12 @@ void Scene::dessinerTerrain()
 void Scene::chargerTextures()
 {
 
-	if(this->texture.loadFromFile("core/img/metal.jpg"))
+	if(this->texture.loadFromFile("../img/metal.jpg"))
 	{
 		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
 	}
 	this->textures.push_back(this->texture);
-	if(this->texture.loadFromFile("core/img/glass.jpg"))
+	if(this->texture.loadFromFile("../img/glass.jpg"))
 	{
 		std::cout<<"Erreur chargement de la texture : glass.jpg"<<std::cout;
 	}
