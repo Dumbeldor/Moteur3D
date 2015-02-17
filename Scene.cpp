@@ -79,17 +79,48 @@ void Scene::dessiner()
 void Scene::dessinerTerrain()
 {
 	sf::Texture::bind(&this->textures[0]);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glBegin(GL_QUADS);
 	glColor3ub(255,255,255);
 
 	// Position des sommets de la texture dans la scene
-	glTexCoord2d(0, 1); glVertex3d(-2, -2, 0);
-	glTexCoord2d(0, 0); glVertex3d(2, -2, 0);
-	glTexCoord2d(1, 0); glVertex3d(2, 2, 0);
-	glTexCoord2d(1, 1); glVertex3d(-2, 2, 0);
-
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,0); glVertex3d(-10,-10,-1);
+	glTexCoord2i(10,0);     glVertex3i(10,-10,-1);
+	glTexCoord2i(10,10);    glVertex3i(10,10,-1);
+	glTexCoord2i(0,10);     glVertex3i(-10,10,-1);
 	// Fin de la "série" de quadrilatères
 	glEnd();
+
+
+	//Cube
+	sf::Texture::bind(&this->textures[1]);
+	glBegin(GL_QUADS);
+	glTexCoord2d(0,1);  glVertex3d(1,1,2);
+	glTexCoord2d(0,0);  glVertex3d(1,1,0);
+	glTexCoord2d(1,0);  glVertex3d(-1,1,0);
+	glTexCoord2d(1,1);  glVertex3d(-1,1,2);
+
+	glTexCoord2d(0,1);  glVertex3d(1,-1,2);
+	glTexCoord2d(0,0);  glVertex3d(1,-1,0);
+	glTexCoord2d(1,0);  glVertex3d(1,1,0);
+	glTexCoord2d(1,1);  glVertex3d(1,1,2);
+
+	glTexCoord2d(0,1);  glVertex3d(-1,-1,2);
+	glTexCoord2d(0,0);  glVertex3d(-1,-1,0);
+	glTexCoord2d(1,0);  glVertex3d(1,-1,0);
+	glTexCoord2d(1,1);  glVertex3d(1,-1,2);
+
+	glTexCoord2d(0,1);  glVertex3d(-1,1,2);
+	glTexCoord2d(0,0);  glVertex3d(-1,1,0);
+	glTexCoord2d(1,0);  glVertex3d(-1,-1,0);
+	glTexCoord2d(1,1);  glVertex3d(-1,-1,2);
+
+
+	glEnd();
+
+
 }
 
 void Scene::chargerTextures()
@@ -98,6 +129,11 @@ void Scene::chargerTextures()
 	if(this->texture.loadFromFile("metal.jpg"))
 	{
 		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
+	}
+	this->textures.push_back(this->texture);
+	if(this->texture.loadFromFile("glass.jpg"))
+	{
+		std::cout<<"Erreur chargement de la texture : glass.jpg"<<std::cout;
 	}
 	this->textures.push_back(this->texture);
 }
