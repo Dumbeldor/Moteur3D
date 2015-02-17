@@ -2,8 +2,8 @@ CC=g++
 CFLAGS= -Wall
 LDFLAGS=
 EXEC= opengl
-SRC= Scene.cpp main.cpp
-HEADER= Scene.h
+SRC= core/Scene.cpp main.cpp
+HEADER= core/Scene.h
 OBJ= $(SRC:.cpp=.o)
 OBJH= $(HEADER:.h=.o)
 

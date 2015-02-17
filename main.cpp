@@ -2,7 +2,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <iostream>
-#include "Scene.h"
+#include "core/Scene.h"
 
 
 

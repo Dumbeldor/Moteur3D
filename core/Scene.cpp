@@ -126,12 +126,12 @@ void Scene::dessinerTerrain()
 void Scene::chargerTextures()
 {
 
-	if(this->texture.loadFromFile("metal.jpg"))
+	if(this->texture.loadFromFile("core/img/metal.jpg"))
 	{
 		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
 	}
 	this->textures.push_back(this->texture);
-	if(this->texture.loadFromFile("glass.jpg"))
+	if(this->texture.loadFromFile("core/img/glass.jpg"))
 	{
 		std::cout<<"Erreur chargement de la texture : glass.jpg"<<std::cout;
 	}
