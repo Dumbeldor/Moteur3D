@@ -20,8 +20,11 @@ class Objet3DStatique
         float16 angleHorizontal;
 
     private:
+        void texture(std::string);
+
         std::vector<sf::Texture> textures;
 		sf::Texture tex;
+		std::string nom;
 
 }
 
