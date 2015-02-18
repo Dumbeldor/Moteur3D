@@ -4,7 +4,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <iostream>
-#include <vector>  
+#include <vector>
 
 class Scene
 {
@@ -15,16 +15,18 @@ class Scene
 		void dessinerTerrain();
 		void afficher();
 		void chargerTextures();
+		void texture(std::string);
+		void dessinerSkybox();
 
 		sf::RenderWindow window;
 		bool continuer;
-		const unsigned short int LARGEUR_ECRAN = 1280, 
+		const unsigned short int LARGEUR_ECRAN = 1280,
 		      			 HAUTEUR_ECRAN = 960;
 	//	unsigned short int dex = 1;
 	//	sf::Texture texture[dex];
 		std::vector<sf::Texture> textures;
-		sf::Texture texture;
-		
+		sf::Texture tex;
+
 
 	public:
 		Scene();

@@ -18,6 +18,8 @@
 					<Add library="sfml-graphics" />
 					<Add library="sfml-window" />
 					<Add library="sfml-system" />
+					<Add library="GLU" />
+					<Add library="GL" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -39,10 +41,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../ex.cpp" />
+		<Unit filename="../include/Scene.h" />
+		<Unit filename="../main.cpp" />
+		<Unit filename="../src/Scene.cpp" />
 		<Unit filename="cb.bmp" />
-		<Unit filename="include/Scene.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="src/Scene.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

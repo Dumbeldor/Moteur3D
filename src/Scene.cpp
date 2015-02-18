@@ -1,6 +1,7 @@
 #include "../include/Scene.h"
 
 
+
 Scene::Scene()
 {
 	window.create(sf::VideoMode(this->LARGEUR_ECRAN, this->HAUTEUR_ECRAN, 32), "Test OpenGL", sf::Style::Default, sf::ContextSettings(32));
@@ -75,6 +76,9 @@ void Scene::dessiner()
 
 	//Dessins du terrain
 	this->dessinerTerrain();
+
+	//Dessins de la skybox
+	this->dessinerSkybox();
 }
 
 void Scene::dessinerTerrain()
@@ -124,17 +128,52 @@ void Scene::dessinerTerrain()
 
 }
 
+void Scene::dessinerSkybox()
+{
+    sf::Texture::bind(&this->textures[2]);
+    glBegin(GL_QUADS);
+
+    glTexCoord2d(0, 1); glVertex3d(-1, -1, 1);
+    glTexCoord2d(0, 0); glVertex3d(-1, -1, -1);
+    glTexCoord2d(1, 0); glVertex3d(-1, 1, -1);
+    glTexCoord2d(1, 1); glVertex3d(-1, 1, 1);
+
+    glEnd();
+
+    sf::Texture::bind(&this->textures[4]);
+    glBegin(GL_QUADS);
+    glTexCoord2d(0, 1); glVertex3d(1, -1, 1);
+    glTexCoord2d(0, 0); glVertex3d(1, -1, -1);
+    glTexCoord2d(1, 0); glVertex3d(-1, -1, -1);
+    glTexCoord2d(1, 1); glVertex3d(-1, -1, 1);
+    glEnd();
+
+    sf::Texture::bind(&this->textures[7]);
+    glBegin(GL_QUADS);
+    glTexCoord2d(0, 1); glVertex3d(-1, -1, -1);
+    glTexCoord2d(0, 0); glVertex3d(1, -1, -1);
+    glTexCoord2d(1, 0); glVertex3d(1, 1, -1);
+    glTexCoord2d(1, 1); glVertex3d(-1, 1, -1);
+    glEnd();
+
+}
 void Scene::chargerTextures()
 {
+	this->texture("img/metal.jpg");     // metal : 0
+	this->texture("img/glass.jpg");     // glass : 1
+	this->texture("img/skybox/nord.bmp");      // nord : 2
+	this->texture("img/skybox/sud.bmp");       // sud: 3
+	this->texture("img/skybox/ouest.bmp");     //  ouest: 4
+	this->texture("img/skybox/est.bmp");       // est : 5
+	this->texture("img/skybox/haut.bmp");      // haut : 6
+	this->texture("img/skybox/bas.bmp");       // bas :7
+}
 
-	if(this->texture.loadFromFile("../img/metal.jpg"))
+void Scene::texture(std::string nomTex)
+{
+    if(this->tex.loadFromFile(nomTex))
 	{
 		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
 	}
-	this->textures.push_back(this->texture);
-	if(this->texture.loadFromFile("../img/glass.jpg"))
-	{
-		std::cout<<"Erreur chargement de la texture : glass.jpg"<<std::cout;
-	}
-	this->textures.push_back(this->texture);
+	this->textures.push_back(this->tex);
 }

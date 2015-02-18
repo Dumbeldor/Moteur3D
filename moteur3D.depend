@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1424215060 source:/home/vincent/opengl/moteur3D/main.cpp
+	<SFML/Graphics.hpp>
+	<GL/gl.h>
+	<GL/glu.h>
+	<iostream>
+	"include/Scene.h"
+
+1424217802 /home/vincent/opengl/moteur3D/include/Scene.h
+	<SFML/Graphics.hpp>
+	<GL/gl.h>
+	<GL/glu.h>
+	<iostream>
+	<vector>
+
+1424216439 source:/home/vincent/opengl/moteur3D/src/Scene.cpp
+	"../include/Scene.h"
+
