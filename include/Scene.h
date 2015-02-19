@@ -5,6 +5,7 @@
 #include <GL/glu.h>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Scene
 {
@@ -25,6 +26,7 @@ class Scene
 	//	unsigned short int dex = 1;
 	//	sf::Texture texture[dex];
 		std::vector<sf::Texture> textures;
+		std::vector<std::string> texCharger;
 		sf::Texture tex;
 
 

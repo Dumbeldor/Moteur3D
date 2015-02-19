@@ -4,7 +4,8 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <iostream>
-
+#include <map>
+/*
 class Objet3DStatique
 {
     public:
@@ -12,21 +13,22 @@ class Objet3DStatique
         void dessiner3D();
 
         //Position
-        float16 positionX;
-        float16 positionY;
-        float16 positionZ;
+        float positionX;
+        float positionY;
+        float positionZ;
 
         //Angle  vertical en Z
-        float16 angleHorizontal;
+        float angleHorizontal;
 
     private:
         void texture(std::string);
 
         std::vector<sf::Texture> textures;
+        map<std::string, sf::Texture> nomTex;
 		sf::Texture tex;
 		std::string nom;
 
-}
+}; */
 
 
 #endif // OBJET3DSTATIQUE_H_INCLUDED

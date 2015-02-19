@@ -1,12 +1,13 @@
 #include "../include/Objet3DStatique.h"
-
+/*
 Objet3DStatique::Objet3DStatique(std::string nomFichier)
 {
     //init
-    this->float16 positionX = 0.0;
-    this->float16 positionY = 0.0;
-    this->float16 positionZ = 0.0;
-    this->float16 angleHorizontal = 0.0;
+
+    this->positionX = 0.0;
+    this->positionY = 0.0;
+    this->positionZ = 0.0;
+    this->angleHorizontal = 0.0;
 
     //Ouverture fichier
     std::fstream fichier(nomFichier.c_str(), std::fstream::in);
@@ -16,6 +17,7 @@ Objet3DStatique::Objet3DStatique(std::string nomFichier)
     {
         std::string ligne;
 
+        this->textures.get
         // Lecture de chaques lignes
         while(getline(fichier, ligne))
         {
@@ -57,13 +59,17 @@ Objet3DStatique::Objet3DStatique(std::string nomFichier)
         std::cout<<"Erreur lors de l'ouverture du fichier " << nomFichier.c_str() << std::endl;
     }
     }
+
 }
 
-void Scene::texture(std::string nomTex)
+void Objet3DStatique::texture(std::string nomTex)
 {
     if(this->tex.loadFromFile(nomTex))
 	{
 		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
 	}
 	this->textures.push_back(this->tex);
+	this->nomTex[nomTex] = this->textures.size() -1;
 }
+
+*/

@@ -18,6 +18,7 @@ Scene::Scene()
 }
 Scene::~Scene()
 {
+
 }
 void Scene::executer()
 {
@@ -160,6 +161,7 @@ void Scene::dessinerSkybox()
 void Scene::chargerTextures()
 {
 	this->texture("img/metal.jpg");     // metal : 0
+	this->texture("img/metal.jpg"); //La même texture peut être chargé qu'une seul fois !
 	this->texture("img/glass.jpg");     // glass : 1
 	this->texture("img/skybox/nord.bmp");      // nord : 2
 	this->texture("img/skybox/sud.bmp");       // sud: 3
@@ -171,9 +173,15 @@ void Scene::chargerTextures()
 
 void Scene::texture(std::string nomTex)
 {
-    if(this->tex.loadFromFile(nomTex))
-	{
-		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
-	}
-	this->textures.push_back(this->tex);
+    if (find (texCharger.begin(), texCharger.end(), nomTex) != texCharger.end())
+        std::cout << "Texture : " << nomTex << " deja charge" << std::endl;
+    else
+    {
+        if(!this->tex.loadFromFile(nomTex))
+        {
+            std::cout<<"Erreur chargement de la texture : " << nomTex <<std::cout;
+        }
+        this->textures.push_back(this->tex);
+        this->texCharger.push_back(nomTex);
+    }
 }

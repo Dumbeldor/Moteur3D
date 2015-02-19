@@ -6,13 +6,30 @@
 	<iostream>
 	"include/Scene.h"
 
-1424217802 /home/vincent/opengl/moteur3D/include/Scene.h
+1424285490 /home/vincent/opengl/moteur3D/include/Scene.h
 	<SFML/Graphics.hpp>
 	<GL/gl.h>
 	<GL/glu.h>
 	<iostream>
 	<vector>
+	<algorithm>
 
-1424216439 source:/home/vincent/opengl/moteur3D/src/Scene.cpp
+1424286356 source:/home/vincent/opengl/moteur3D/src/Scene.cpp
 	"../include/Scene.h"
+
+1424282584 source:/home/vincent/opengl/moteur3D/src/Objet3DStatique.cpp
+	"../include/Objet3DStatique.h"
+
+1424282572 /home/vincent/opengl/moteur3D/include/Objet3DStatique.h
+	<SFML/Graphics.hpp>
+	<GL/gl.h>
+	<GL/glu.h>
+	<iostream>
+	<map>
+
+1424284051 /home/vincent/opengl/moteur3D/chargerImg.h
+	<SFML/Graphics.hpp>
+	<GL/gl.h>
+	<GL/glu.h>
+	<iostream>
 

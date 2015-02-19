@@ -40,8 +40,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="cb.bmp" />
+		<Unit filename="include/Objet3DStatique.h" />
 		<Unit filename="include/Scene.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Objet3DStatique.cpp" />
 		<Unit filename="src/Scene.cpp" />
 		<Extensions>
 			<code_completion />
