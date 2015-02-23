@@ -4,12 +4,15 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <iostream>
-#include <map>
-/*
+#include <vector>
+#include <fstream>
+#include "ConteneurTextures.h"
+
 class Objet3DStatique
 {
     public:
         Objet3DStatique(std::string);
+        ~Objet3DStatique();
         void dessiner3D();
 
         //Position
@@ -23,12 +26,11 @@ class Objet3DStatique
     private:
         void texture(std::string);
 
-        std::vector<sf::Texture> textures;
-        map<std::string, sf::Texture> nomTex;
-		sf::Texture tex;
+        ConteneurTextures conteneurTextures;
+        std::vector <std::string> textures;
 		std::string nom;
 
-}; */
+};
 
 
 #endif // OBJET3DSTATIQUE_H_INCLUDED

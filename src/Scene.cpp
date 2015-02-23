@@ -103,10 +103,10 @@ void Scene::dessinerTerrain()
 	//Cube
 	sf::Texture::bind(&this->textures[1]);
 	glBegin(GL_QUADS);
-	glTexCoord2d(0,1);  glVertex3d(1,1,2);
 	glTexCoord2d(0,0);  glVertex3d(1,1,0);
 	glTexCoord2d(1,0);  glVertex3d(-1,1,0);
 	glTexCoord2d(1,1);  glVertex3d(-1,1,2);
+	glTexCoord2d(0,1);  glVertex3d(1,1,2);
 
 	glTexCoord2d(0,1);  glVertex3d(1,-1,2);
 	glTexCoord2d(0,0);  glVertex3d(1,-1,0);
@@ -143,10 +143,10 @@ void Scene::dessinerSkybox()
 
     sf::Texture::bind(&this->textures[4]);
     glBegin(GL_QUADS);
-    glTexCoord2d(0, 1); glVertex3d(1, -1, 1);
     glTexCoord2d(0, 0); glVertex3d(1, -1, -1);
     glTexCoord2d(1, 0); glVertex3d(-1, -1, -1);
     glTexCoord2d(1, 1); glVertex3d(-1, -1, 1);
+    glTexCoord2d(0, 1); glVertex3d(1, -1, 1);
     glEnd();
 
     sf::Texture::bind(&this->textures[7]);

@@ -1,5 +1,7 @@
 #include "../include/Objet3DStatique.h"
-/*
+
+
+
 Objet3DStatique::Objet3DStatique(std::string nomFichier)
 {
     //init
@@ -17,7 +19,7 @@ Objet3DStatique::Objet3DStatique(std::string nomFichier)
     {
         std::string ligne;
 
-        this->textures.get
+
         // Lecture de chaques lignes
         while(getline(fichier, ligne))
         {
@@ -34,12 +36,8 @@ Objet3DStatique::Objet3DStatique(std::string nomFichier)
                 std::string nomFichierTexture;
                 nomFichierTexture.assign(ligne.begin() + 6, ligne.end());
 
-                // Si la texture n'est pas deja creee
-                if(find(this->textures.begin(), this->textures.end(), nomFichierTexture) != this->textures.end())
-                {
-                    // On cré la texture
-                    this->texture(nomFichierTexture);
-                }
+                this->conteneurTextures.ajouter(nomFichierTexture);
+                this->textures.push_back(nomFichierTexture);
             }
 
             // Debut de coordonnees
@@ -58,18 +56,20 @@ Objet3DStatique::Objet3DStatique(std::string nomFichier)
     {
         std::cout<<"Erreur lors de l'ouverture du fichier " << nomFichier.c_str() << std::endl;
     }
-    }
+
 
 }
 
-void Objet3DStatique::texture(std::string nomTex)
+Objet3DStatique::~Objet3DStatique()
 {
-    if(this->tex.loadFromFile(nomTex))
-	{
-		std::cout<<"Erreur chargement de la texture : metal.jpg"<<std::cout;
-	}
-	this->textures.push_back(this->tex);
-	this->nomTex[nomTex] = this->textures.size() -1;
+    std::vector <std::string>::iterator i;
+    for(i = this->textures.begin(); i != this->textures.end(); i++)
+    {
+        this->conteneurTextures.supprimer(*i);
+    }
+    this->textures.clear();
 }
 
-*/
+
+
+

@@ -1,15 +1,15 @@
 nom Skybox
 
-image img/skybox/nord.bmp
-image img/skybox/sud.bmp
-image img/skybox/ouest.bmp
-image img/skybox/est.bmp
-image img/skybox/haut.bmp
-image img/skybox/bas.bmp
+image skybox\nord.bmp
+image skybox\sud.bmp
+image skybox\ouest.bmp
+image skybox\est.bmp
+image skybox\haut.bmp
+image skybox\bas.bmp
 
 rst 0.0 0.0 0.0 1.0      1.0 1.0 1.0      0.0 0.0 0.0
 
-image skybox/nord.bmp
+image skybox\nord.bmp
 {
     0   0     -1 -1  1 
     0   255   -1 -1 -1 
@@ -17,7 +17,7 @@ image skybox/nord.bmp
     255 0     -1  1  1 
 }
 
-image skybox/sud.bmp
+image skybox\sud.bmp
 {
     0   0      1  1  1 
     0   255    1  1 -1 
@@ -25,7 +25,7 @@ image skybox/sud.bmp
     255 0      1 -1  1 
 }
 
-image skybox/ouest.bmp
+image skybox\ouest.bmp
 {
     0   0      1 -1  1 
     0   255    1 -1 -1 
@@ -33,7 +33,7 @@ image skybox/ouest.bmp
     255 0     -1 -1  1 
 }
 
-image skybox/est.bmp
+image skybox\est.bmp
 {
     0   0      1 -1  1 
     0   255    1 -1 -1 
